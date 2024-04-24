@@ -894,6 +894,28 @@ select {
     -o-transition: 0.3s;
 }
 
+
+.btns-div{
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+}
+/* ---- table ------ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
 /* ------ nav responsive way --------- */
 
 

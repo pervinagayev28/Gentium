@@ -116,20 +116,27 @@ var users = {};
 
 document.getElementById("register-form")?.addEventListener("submit", function (event) {
     event.preventDefault();
-    var name = document.getElementById("name").value;
-    console.log("name: " + name);
-    var email = document.getElementById("email").value;
-    console.log("name: " + email);
-    var subject = document.getElementById("subject").value;
-    console.log("name: " + subject);
-    var budget = document.getElementById("budget").value;
-    console.log("name: " + budget);
-    var message = document.getElementById("message").value;
-    console.log("name: " + message);
+    // var name = document.getElementById("name").value;
+    // var email = document.getElementById("email").value;
+    // var subject = document.getElementById("subject").value;
+    // var budget = document.getElementById("budget").value;
+    // var message = document.getElementById("message").value;
 
-    addUser(name, email, subject, budget, message);
+    // var cell1 = row.insertCell(0);
+    // var cell2 = row.insertCell(1);
+    // var cell3 = row.insertCell(2);
+    // var cell4 = row.insertCell(3);
+    // var cell5 = row.insertCell(4);
+    var row = document.getElementById("user-table").getElementsByTagName('tbody')[0].insertRow();
+    row.insertCell(0).innerHTML = document.getElementById("name").value;
+    row.insertCell(1).innerHTML = document.getElementById("email").value;
+    row.insertCell(2).innerHTML = document.getElementById("subject").value;
+    row.insertCell(3).innerHTML = document.getElementById("budget").value;
+    row.insertCell(4).innerHTML = document.getElementById("message").value;
 
-    document.getElementById("register-form").reset();
+    // addUser(name, email, subject, budget, message);
+
+    // document.getElementById("register-form").reset();
 
 });
 function addUser(name, email, subject, budget, message) {
@@ -141,7 +148,37 @@ function addUser(name, email, subject, budget, message) {
     }
 }
 
-console.log(users);
+
+
+// show users
+
+function showUsers() {
+    var table = document.getElementById("user-table").getElementsByTagName('tbody')[0];
+    table.innerHTML = "";
+
+    for (var key in users) {
+        if (users.hasOwnProperty(key)) {
+            var user = users[key];
+            var row = table.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            cell1.innerHTML = user.name;
+            cell2.innerHTML = user.email;
+            cell3.innerHTML = user.subject;
+            cell4.innerHTML = user.budget;
+            cell5.innerHTML = user.message;
+        }
+    };
+}
+
+
+
+
+
+
 
 
 
