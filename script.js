@@ -1,19 +1,21 @@
 // loading page
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     // var myDiv = document.querySelector('.content');
     // myDiv.style.opacity = '1';
     // myDiv.style.transform = 'translateX(0)';
-    setTimeout(function() {
+    setTimeout(function () {
         var loadingLabel = document.querySelector('.loading-page');
-        loadingLabel.style.display = 'none';
-    }, 2500); 
+        if (loadingLabel !== null)
+            loadingLabel.style.display = 'none';
+
+    }, 2500);
 });
 
 
 
-document.querySelector('.nav-menu-link').addEventListener('click', function () {
+document.querySelector('.nav-menu-link')?.addEventListener('click', function () {
     event.preventDefault();
     var menuBarDivStyle = document.querySelector('.menu-bar-div').style;
     menuBarDivStyle.position = 'absolute';
@@ -28,7 +30,7 @@ document.querySelector('.nav-menu-link').addEventListener('click', function () {
 
 // closing menu bar 
 
-document.querySelector('.closing-menu-bar-btn').addEventListener('click', function () {
+document.querySelector('.closing-menu-bar-btn')?.addEventListener('click', function () {
     document.querySelector('.menu-bar-div').style.display = 'none';
 });
 
@@ -59,7 +61,7 @@ let temp = 1;
 var changeItemBtns = document.querySelectorAll('.change-item-btn');
 
 changeItemBtns.forEach(function (btn) {
-    btn.addEventListener('click', function () {
+    btn?.addEventListener('click', function () {
         resetOtherButtons();
         this.querySelector('.i').style.color = 'red';
 
@@ -105,6 +107,41 @@ links.forEach(function (link) {
     });
 });
 
+
+
+// --- add users ----
+
+var users = {};
+
+
+document.getElementById("register-form")?.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var name = document.getElementById("name").value;
+    console.log("name: " + name);
+    var email = document.getElementById("email").value;
+    console.log("name: " + email);
+    var subject = document.getElementById("subject").value;
+    console.log("name: " + subject);
+    var budget = document.getElementById("budget").value;
+    console.log("name: " + budget);
+    var message = document.getElementById("message").value;
+    console.log("name: " + message);
+
+    addUser(name, email, subject, budget, message);
+
+    document.getElementById("register-form").reset();
+
+});
+function addUser(name, email, subject, budget, message) {
+    var key = email.toLowerCase();
+    if (users.hasOwnProperty(key)) {
+        alert("THE EMAIL IS EXSISTED ALREADY");
+    } else {
+        users[key] = [{ name: name, email: email, subject: subject, budget: budget, message: message }];
+    }
+}
+
+console.log(users);
 
 
 
