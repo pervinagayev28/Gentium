@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="./responsive.css">
+    <title>Document</title>
+</head>
+
+<body id="body">
+    <div id="register-page" class="body-div">
+
+        <!-- header -->
+
+        <header>
+            <div class="left-side">
+                <h1>Let's Talk?</h1>
+                <p>Let's make something awesome together</p>
+            </div>
+            <a  id="close-btn" href="./index.html">
+                <i class="fa-solid fa-xmark"></i>
+            </a>
+        </header>
+
+        <!-- form -->
+
+        <form>
+            <div class="inputItem">
+                <label for="name">YOUR NAME</label>
+                <input id="name" type="text" />
+            </div>
+            <div class="inputItem">
+                <label for="email">YOUR EMAIL</label>
+                <input  id="email" type="text" />
+            </div>
+
+            <div class="inputItem">
+                <label for="subject">SUBJECT</label>
+                <input id="subject" type="text" />
+            </div>
+
+            <div class="inputItem">
+                <label for="budget">BUDGET</label>
+                <select aria-placeholder="Select Budget" class="select" id="budget">
+                    <option disabled selected>Select Budget</option>
+                    <option value="frontend">Frontend</option>
+                    <option value="backend">Backend</option>
+                </select>
+            </div>
+
+
+            <div class="inputItem">
+                <label for="message">YOUR MESSAGE</label>
+                <textarea name="message" cols="30" rows="3"></textarea>
+            </div>
+
+            <!-- send button -->
+
+            <input type="submit" value="Send" id="send-btn"></input>
+        </form>
+
+    </div>
+</body>
+
+</html>
