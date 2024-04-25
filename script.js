@@ -18,13 +18,24 @@ document.addEventListener('DOMContentLoaded', function () {
 document.querySelector('.nav-menu-link')?.addEventListener('click', function () {
     event.preventDefault();
     var menuBarDivStyle = document.querySelector('.menu-bar-div').style;
+    menuBarDivStyle.position = 'fixed';
     menuBarDivStyle.position = 'absolute';
     menuBarDivStyle.display = 'flex';
     menuBarDivStyle.flexDirection = 'column';
     menuBarDivStyle.alignItems = 'center';
     menuBarDivStyle.backgroundColor = 'black';
     menuBarDivStyle.width = '100%';
+
+    
     showResponsiveMenuBarItems();
+
+    var menuBarDivRect = menuBarDiv.getBoundingClientRect();
+    var yOffset = window.pageYOffset || document.documentElement.scrollTop;
+    var targetScrollY = yOffset + menuBarDivRect.top;
+    window.scroll({
+        top: targetScrollY,
+        behavior: 'smooth'
+    });
 });
 
 

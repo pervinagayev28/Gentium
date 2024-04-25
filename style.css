@@ -67,9 +67,10 @@ html {
     display: flex;
     flex-direction: column;
     position: relative;
+    max-width: 1200px;
+    width: 100%;
+margin: 0 auto;
 }
-
-
 
 .nav {
     color: white;
@@ -79,9 +80,12 @@ html {
     padding: 50px 20px;
     padding-bottom: 0;
     background-color: #060606;
-    position: fixed;
+    /* position: fixed;
+    left: 0;
+    top: 0; */
     width: 100%;
 
+z-index: 1;
 }
 
 .nav-right-side {
@@ -132,25 +136,31 @@ html {
     display: flex;
     flex-direction: column;
     gap: 100px;
+    width: 100%;
 }
 
 /* section 1 */
 
 
 .section-1 {
+    position: relative;
     display: flex;
     flex-direction: column;
+    align-items: end;
     padding: 20px;
     overflow: hidden;
-    gap: 50px;
-    background-image: url("./hero_02.jpg");
+    background-color: black;
+    /* background-image: url("./hero_02.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
 
 }
 
-
+.section-1 img{
+    width: 100%;
+    max-width: 600px;
+}
 
 
 
@@ -171,6 +181,8 @@ html {
     width: 600px;
     padding: 100px 0;
     /* padding-bottom: 0; */
+    position: absolute;
+    left: 30px;
 }
 
 .section-1-left-side-top-label {
@@ -207,7 +219,6 @@ html {
 /* left side bottom */
 .section-1-left-side-bottom {
     display: flex;
-    padding: 0 10px;
     gap: 30px;
     justify-content: center;
 
@@ -221,7 +232,6 @@ html {
     color: white;
     background-color: #1b1b1b;
     padding: 40px;
-    width: 30vw;
     transition: background-color 0.3s ease;
     -webkit-transition: background-color 0.3s ease;
     -moz-transition: background-color 0.3s ease;
@@ -267,12 +277,8 @@ html {
 
 .section-1-left-side-bottom-label {
     background-color: white;
-    width: 4em;
 }
 
-.section-1-left-side-bottom-item-p {
-    width: 20vw;
-}
 
 
 
@@ -281,12 +287,19 @@ html {
 .section-2-item-icon {
     opacity: 0;
     color: white;
-    transition: opacity 0.5s ease;
-    -webkit-transition: opacity 0.5s ease;
-    -moz-transition: opacity 0.5s ease;
-    -ms-transition: opacity 0.5s ease;
-    -o-transition: opacity 0.5s ease;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transform: scale(2);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
 }
+
+
 
 
 .section-2 {
@@ -456,9 +469,7 @@ html {
 .section-4-items {
     display: flex;
     gap: 40px;
-    padding: 20px;
-    align-items: center;
-    justify-content: center;
+   
     /* transition-delay: 1s; */
 }
 
@@ -492,24 +503,20 @@ html {
 }
 
 .left-side img {
-    width: 53vw;
+    width: 40vw;
 }
 
 .right-side img {
-    width: 25vw;
+    width: 20vw;
 }
 
-.section-4-items {
-    background-color: #e6edf7;
-}
 
 
 /* section 5 */
 .section-5-items {
     display: flex;
     gap: 30px;
-    padding:
-        30px;
+    padding:30px;
     align-items: center;
     justify-content: center;
 }
@@ -531,7 +538,6 @@ html {
     font-size: 15px;
     font-weight: bold;
     color: gray;
-    width: 28vw;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
@@ -546,7 +552,6 @@ html {
 }
 
 .section-6 .img-div {
-    width: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -554,7 +559,8 @@ html {
 }
 
 .section-6 img {
-    width: 450px;
+    /* width: 450px; */
+    width: 100%;
 }
 
 .section-6 .right-side {
@@ -822,7 +828,7 @@ select {
     cursor: pointer;
 }
 
-#register-page form input{
+#register-page form input {
     transition-delay: 0.7s;
     -webkit-transition: 0.7s;
     -moz-transition: 0.7s;
@@ -830,7 +836,8 @@ select {
     -o-transition: 0.7s;
 }
 
-#register-page form input,textarea:focus {
+#register-page form input,
+textarea:focus {
     box-shadow: none;
     border: red solid 1.5px;
     outline: none;
@@ -895,19 +902,21 @@ select {
 }
 
 
-.btns-div{
+.btns-div {
     display: flex;
     gap: 100px;
     align-items: center;
     justify-content: center;
 }
+
 /* ---- table ------ */
 table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 8px;
@@ -916,6 +925,7 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
 /* ------ nav responsive way --------- */
 
 
@@ -971,6 +981,7 @@ th {
 
 .menu-bar-div {
     display: none;
+    position: fixed;
 }
 
 .nav-menu-link {
