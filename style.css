@@ -5,7 +5,6 @@
     text-decoration: none;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
@@ -18,8 +17,9 @@ html {
     width: 100%;
     height: 100%;
     position: absolute;
-    position: fixed;
-    max-width: 1200px;
+ 
+    left: 0;
+    top: 0;
 }
 
 .loading-page .content {
@@ -86,7 +86,7 @@ html {
     top: 0; */
     width: 100%;
 
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 .nav-right-side {
@@ -157,10 +157,16 @@ html {
     width: 100%;
 
 }
+.section-1-left-side-bottom{
+    position: absolute;
+    bottom: 0px;
+    padding: 20px;
+}
 
 .section-1 img {
     width: 100%;
     max-width: 600px;
+
 }
 
 
@@ -471,11 +477,17 @@ html {
 
 
 /* section 4 */
+
 .section-4-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-
+    gap: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgray;
+    padding: 50px;
     /* transition-delay: 1s; */
 }
 
@@ -512,7 +524,8 @@ html {
     -webkit-transition: 0.7s;
     -moz-transition: 0.7s;
     -ms-transition: 0.7s;
-    -o-transition: 0.7s;}
+    -o-transition: 0.7s;
+}
 
 .img-div:hover .content {
     opacity: 1;
@@ -556,6 +569,7 @@ html {
 .section-5-items p {
     font-size: 15px;
     font-weight: bold;
+    max-width: 350px;
     color: gray;
     font-family: Georgia, 'Times New Roman', Times, serif;
 
@@ -567,7 +581,9 @@ html {
 .section-6 {
     display: flex;
     padding: 20px;
-
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .section-6 .img-div {
@@ -575,6 +591,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .section-6 img {
@@ -586,13 +603,13 @@ html {
     display: flex;
     flex-direction: column;
     align-items: start;
-    padding: 50px 5vw;
-    gap: 10vw;
+    padding: 50px;
+    gap: 100px;
 }
 
 .section-6 .right-side .p {
     color: gray;
-    width: 32vw;
+    /* width: 32vw; */
 }
 
 
@@ -602,12 +619,16 @@ html {
 .section-7 .section-2-header {
     align-items: center;
     gap: 20px;
+
 }
 
 .section-7 {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .radio-buttons {
@@ -619,6 +640,9 @@ html {
 footer {
     display: flex;
     flex-direction: column;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .footer-div {
@@ -776,11 +800,7 @@ footer {
 /* ---------------- part of register -------------  */
 
 
-#body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 
 #register-page {
     display: flex;
@@ -956,6 +976,8 @@ th {
     background-color: black;
     width: 100%;
     padding-bottom: 300px;
+    left: 0;
+    top: 0px;
 }
 
 .closing-menu-bar-div {
